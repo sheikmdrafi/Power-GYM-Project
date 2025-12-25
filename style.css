@@ -1,0 +1,552 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;500;700&display=swap");
+
+/* Base */
+:root {
+    --clr-primary: #29a396;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Nunito", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background: radial-gradient(#111, #071a1a);
+    color: #fff;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header,
+.section {
+    width: 100%;
+    padding: 40px 0;
+    overflow: hidden;
+}
+
+.header::after,
+.header::before,
+.section::after,
+.section::before {
+    content: "";
+    background: url(https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/blur-1.png);
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    bottom: 0;
+}
+
+.header::after {
+    left: -200px;
+}
+
+.header::before {
+    right: -200px;
+}
+
+.mb {
+    margin-bottom: 30px;
+}
+
+.mt {
+    margin-top: 20px;
+}
+
+.section {
+    background: #1d1f1e;
+    position: relative;
+    padding: 80px 0;
+}
+
+.section::after {
+    left: -200px;
+}
+
+.section::before {
+    width: 600px;
+    right: -200px;
+}
+
+.section:nth-child(even) {
+    background: #141615;
+}
+
+.section:nth-child(even)::after,
+.section:nth-child(even)::before {
+    display: none;
+}
+
+.primary {
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.secondary {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.tertiary {
+    font-size: 15px;
+}
+
+/* Menu */
+.menu {
+    width: 100%;
+    background: linear-gradient(to right, #0e0e0e 70%, #142d2a);
+    padding: 12px 0;
+}
+
+.menu .container {
+    justify-content: space-between;
+}
+
+.mobile-btn {
+    display: none;
+}
+
+.logo {
+    cursor: pointer;
+}
+
+.logo img {
+    width: 80px;
+    height: auto;
+}
+
+.nav {
+    list-style: none;
+}
+
+.nav-item {
+    display: inline-block;
+    margin-right: 30px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.nav-item:hover a {
+    color: #29a396;
+    transition: 0.3s linear;
+}
+
+.nav-item:last-of-type {
+    margin-right: 0;
+}
+
+/* Buttons */
+.btn {
+    padding: 10px 28px;
+    background: var(--clr-primary);
+    border-radius: 40px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 700;
+    display: inline-block;
+}
+
+.btn:hover {
+    background: #fff;
+    color: var(--clr-primary);
+    transition: 0.5s ease;
+}
+
+/* Text */
+.text {
+    width: 50%;
+}
+
+.text h1 {
+    font-size: 60px;
+    line-height: 1;
+}
+
+.text h1 span {
+    color: var(--clr-primary);
+}
+
+.text p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/* Visual */
+.visual {
+    width: 50%;
+    text-align: center;
+}
+
+.visual img {
+    width: 80%;
+    height: auto;
+}
+
+/* Trainer */
+.trainer {
+    width: 300px;
+    background: #111;
+    text-align: center;
+    padding: 30px;
+    border-radius: 10px;
+    margin: 0 20px;
+    z-index: 1000;
+}
+
+.trainer img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #29a396;
+    margin-bottom: 20px;
+}
+
+.btn-2 {
+    color: #29a396;
+    font-size: 40px;
+}
+
+/* Footer */
+.footer {
+    padding: 30px 0;
+    border-top: 1px solid #fff;
+    text-align: center;
+}
+
+/* --- CHATBOT CSS --- */
+.chat-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--clr-primary);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    z-index: 9999;
+}
+
+.chat-notification {
+    position: fixed;
+    bottom: 65px;
+    right: 20px;
+    background: red;
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex; /* Flex to center text */
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 10000;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-10px);}
+    60% {transform: translateY(-5px);}
+}
+
+.chat-box {
+    display: none; 
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 350px; /* Made slightly wider */
+    height: 450px; /* Made slightly taller */
+    background: #fff;
+    color: #000;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    z-index: 9999;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.chat-header {
+    background: var(--clr-primary);
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.chat-header span {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.chat-body {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    background: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.bot-message, .user-message {
+    padding: 8px 12px;
+    border-radius: 10px;
+    max-width: 85%;
+    font-size: 14px;
+    word-wrap: break-word;
+    white-space: pre-line; /* Allows new lines */
+}
+
+.bot-message {
+    background: #e0e0e0;
+    align-self: flex-start;
+}
+
+.user-message {
+    background: var(--clr-primary);
+    color: #fff;
+    align-self: flex-end;
+}
+
+/* Quick Options (Chips) */
+.quick-options {
+    padding: 5px 10px;
+    background: #fff;
+    border-top: 1px solid #ccc;
+    display: flex;
+    gap: 5px;
+    overflow-x: auto; /* Scroll if too many buttons */
+    white-space: nowrap;
+}
+
+.quick-options button {
+    background: #fff;
+    border: 1px solid var(--clr-primary);
+    color: var(--clr-primary);
+    padding: 5px 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: 0.3s;
+}
+
+.quick-options button:hover {
+    background: var(--clr-primary);
+    color: #fff;
+}
+
+.chat-input {
+    display: flex;
+    border-top: 1px solid #ccc;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+
+.chat-input button {
+    padding: 10px 15px;
+    background: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .flex {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .mobile-btn {
+        display: block;
+        font-size: 35px;
+        cursor: pointer;
+        position: absolute;
+        right: 20px;
+        top: 12px;
+    }
+
+    .menu.active .nav-item {
+        display: block;
+        margin: 30px 0;
+    }
+
+    .nav,
+    .menu .btn {
+        display: none;
+    }
+
+    .menu.active .nav,
+    .menu.active .btn {
+        display: block;
+    }
+
+    .menu.active {
+        padding: 30px 0;
+        width: 100%;
+        transition: all 0.8s ease;
+    }
+
+    .text,
+    .visual {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .text h1 {
+        font-size: 45px;
+    }
+    
+    .chat-box {
+        width: 90%; /* Mobile responsive chat */
+        right: 5%;
+        bottom: 80px;
+    }
+}
+/* Text Logo Style */
+.logo-text {
+    color: #fff;
+    font-size: 28px;
+    font-weight: 800; /* Extra Bold */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.logo-text span {
+    color: var(--clr-primary); /* Theme Color (Teal) */
+}
+/* --- REGISTRATION MODAL CSS --- */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 10001; /* On top of everything */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Black transparent bg */
+    backdrop-filter: blur(5px);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: #fff;
+    color: #333;
+    width: 90%;
+    max-width: 400px;
+    padding: 30px;
+    border-radius: 15px;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    animation: slideDown 0.4s ease;
+}
+
+@keyframes slideDown {
+    from {top: -50px; opacity: 0;}
+    to {top: 0; opacity: 1;}
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: var(--clr-primary);
+}
+
+.modal-content h2 {
+    color: var(--clr-primary);
+    margin-bottom: 10px;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.input-group input, 
+.input-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+}
+
+.input-group input:focus, 
+.input-group select:focus {
+    border-color: var(--clr-primary);
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    background: var(--clr-primary);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-submit:hover {
+    background: #1d1f1e;
+}

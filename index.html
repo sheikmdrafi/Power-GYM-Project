@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Power Gym Landing Page</title>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="menu">
+        <div class="container flex">
+            <div class="mobile-btn">
+                <ion-icon name="grid"></ion-icon>
+            </div>
+            <div class="logo">
+              <h2 class="logo-text">Power <span>Gym</span></h2>
+            </div>
+            <ul class="nav">
+                <li class="nav-item"><a href="#">Home</a></li>
+                <li class="nav-item"><a href="#why-us">Features</a></li>
+                <li class="nav-item"><a href="#explore">Explore</a></li>
+                <li class="nav-item"><a href="javascript:void(0)" onclick="openRegister()">Register</a></li>
+            </ul>
+            <a href="javascript:void(0)" class="btn" onclick="openRegister()">Register</a>
+        </div>
+    </div>
+    <header class="header">
+        <div class="container flex">
+            <div class="text">
+                <h1 class="mb">
+                    Complete Daily <br />
+                    <span>Workout</span> With Experts
+                </h1>
+                <p class="mb">
+                    Build your body and fitness with professional touch. Join Power Gym today!
+                </p>
+                <a href="#" class="btn mt">Get Started Now</a>
+            </div>
+            <div class="visual">
+                <img src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/banner-img.png" alt="" />
+            </div>
+        </div>
+    </header>
+    <div class="section" id="why-us">
+        <div class="container flex">
+            <div class="text">
+                <h2 class="primary mb">Why Choose Us?</h2>
+                <h3 class="secondary mb">Consultation with Expert.</h3>
+                <p class="tertiary">
+                   Get guidance from certified trainers to achieve your fitness goals.
+                </p>
+                <h3 class="secondary mb">Best Equipment.</h3>
+                <p class="tertiary">
+                    We provide modern and high-quality gym equipment for all types of workouts.
+                </p>
+            </div>
+            <div class="visual">
+                <img src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/why-us.png" alt="" />
+            </div>
+        </div>
+    </div>
+    <div class="section" id="explore">
+        <div class="container flex">
+            <div class="visual">
+                <img src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/explore.jpg" alt="" />
+            </div>
+            <div class="text">
+                <h2 class="primary mb"> Explore Our Fitness <br /> Studio </h2>
+                <p class="tertiary mb">
+                    Experience a world-class environment with dedicated zones for cardio, weight training, and more.
+                </p>
+                <a href="#" class="btn mt">Get Started Now</a>
+            </div>
+        </div>
+    </div>
+    <div class="section" id="trainer">
+        <h2 class="primary mb">Our Professional Trainers</h2>
+        <div class="container flex">
+            <div class="trainer">
+                <img src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/trainer1.jpg" alt="" />
+                <h3 class="secondary mb">Alan Smith</h3>
+                <p class="tertiary mb">
+                    Expert in Bodybuilding and Nutrition.
+                </p>
+                <a href="#" class="btn-2">
+                    <ion-icon name="arrow-redo-circle-outline"></ion-icon>
+                </a>
+            </div>
+            <div class="trainer">
+                <img src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/trainer2.jpg" alt="" />
+                <h3 class="secondary mb">John Doe</h3>
+                <p class="tertiary mb">
+                    Specialist in CrossFit and Cardio.
+                </p>
+                <a href="#" class="btn-2">
+                    <ion-icon name="arrow-redo-circle-outline"></ion-icon>
+                </a>
+            </div>
+            <div class="trainer">
+                <img src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/trainer3.jpg" alt="" />
+                <h3 class="secondary mb">Emily Rose</h3>
+                <p class="tertiary mb">
+                    Yoga and Mental Health Expert.
+                </p>
+                <a href="#" class="btn-2">
+                    <ion-icon name="arrow-redo-circle-outline"></ion-icon>
+                </a>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container flex">
+            <p class="tertiary">
+                &copy; 2023 Power Gym. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+    <div class="chat-notification" id="chatNotification">1</div>
+    
+    <div class="chat-icon" onclick="toggleChat()">
+        <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+    </div>
+
+    <div class="chat-box" id="chatBox">
+        <div class="chat-header">
+            <h3>Power Gym Support</h3>
+            <span onclick="toggleChat()">X</span>
+        </div>
+        
+        <div class="chat-body" id="chatBody">
+            </div>
+
+        <div class="quick-options" id="quickOptions">
+            <button onclick="handleOption('fees')">Admission & Fees?</button>
+            <button onclick="handleOption('time')">Gym Timings?</button>
+            <button onclick="handleOption('ladies')">Ladies Section?</button>
+        </div>
+
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Ask a question...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeRegister()">&times;</span>
+            <h2>Join Power Gym</h2>
+            <p>Start your fitness journey today!</p>
+            
+            <form id="gymForm" onsubmit="submitForm(event)">
+                <div class="input-group">
+                    <label>Full Name</label>
+                    <input type="text" id="regName" placeholder="Enter your name" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Phone Number</label>
+                    <input type="tel" id="regPhone" placeholder="017xxxxxxxx" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Select Package</label>
+                    <select id="regPackage">
+                        <option value="Monthly - 600/- (Adm: 2000)">Regular Monthly - 600/- (+Adm 2000)</option>
+                        <option value="Package 1 Month - 1500">Package: 1 Month - 1500/-</option>
+                        <option value="Package 2 Months - 2100">Package: 2 Months - 2100/-</option>
+                        <option value="Package 3 Months - 2700">Package: 3 Months - 2700/-</option>
+                        <option value="Package 6 Months - 4200">Package: 6 Months - 4200/-</option>
+                        <option value="Package 12 Months - 7200">Package: 12 Months - 7200/- (Free Member)</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-submit">Confirm Registration</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
