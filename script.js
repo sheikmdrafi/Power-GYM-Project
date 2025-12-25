@@ -171,4 +171,5 @@ function submitForm(event) {
     } else {
         alert("Please fill all details!");
     }
+
 }
