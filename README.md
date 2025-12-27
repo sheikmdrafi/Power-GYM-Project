@@ -25,6 +25,10 @@ A fully responsive, modern Gym Landing Page website built using vanilla HTML, CS
 2. Open the folder.
 3. Double-click on `index.html` to open it in your web browser.
 
+**or use this url** ⬇️
+
+https://sheikmdrafi.github.io/Power-GYM-Project/#explore
+
 ## 📸 Screenshots
 <img width="1884" height="943" alt="image" src="https://github.com/user-attachments/assets/6a5e228b-0b1d-448a-8002-d782b672253d" />
 
